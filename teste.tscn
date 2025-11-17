@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0qjlbmqjvtjn"]
+
+[ext_resource type="Script" uid="uid://nwqpomea1ny7" path="res://TTS.gd" id="1_7w86a"]
+[ext_resource type="Script" uid="uid://b0bqpkyx442fx" path="res://node_2d.gd" id="1_o02vu"]
+
+[sub_resource type="GDScript" id="GDScript_ahqfo"]
+script/source = "extends HSlider
+
+
+func _on_test_text_changed(new_text: String) -> void:
+	pass # Replace with function body.
+
+
+func _on_volume_value_changed(value: float) -> void:
+	pass # Replace with function body.
+
+
+func _on_pitch_value_changed(value: float) -> void:
+	pass # Replace with function body.
+"
+
+[sub_resource type="GDScript" id="GDScript_o02vu"]
+script/source = "extends HSlider
+"
+
+[sub_resource type="GDScript" id="GDScript_7w86a"]
+script/source = "extends HSlider
+"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4iivt"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="volume" type="HSlider" parent="."]
+offset_left = 5.0
+offset_top = 10.0
+offset_right = 103.0
+offset_bottom = 26.0
+value = 50.0
+script = SubResource("GDScript_ahqfo")
+
+[node name="pitch" type="HSlider" parent="."]
+offset_left = 5.0
+offset_top = 28.0
+offset_right = 103.0
+offset_bottom = 44.0
+max_value = 2.0
+step = 0.1
+script = SubResource("GDScript_o02vu")
+
+[node name="rate" type="HSlider" parent="."]
+offset_left = 5.0
+offset_top = 46.0
+offset_right = 103.0
+offset_bottom = 62.0
+min_value = 0.1
+max_value = 10.0
+step = 0.1
+value = 1.0
+script = SubResource("GDScript_7w86a")
+
+[node name="MenuButton" type="MenuButton" parent="."]
+material = SubResource("CanvasItemMaterial_4iivt")
+offset_left = 62.0
+offset_top = 154.0
+offset_right = 137.0
+offset_bottom = 178.0
+text = "testar"
+script = ExtResource("1_7w86a")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 57.0
+offset_top = 105.0
+offset_right = 244.0
+offset_bottom = 136.0
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_o02vu")
+
+[connection signal="value_changed" from="volume" to="MenuButton" method="_on_volume_value_changed"]
+[connection signal="value_changed" from="pitch" to="MenuButton" method="_on_pitch_value_changed"]
+[connection signal="value_changed" from="rate" to="MenuButton" method="_on_rate_value_changed"]
+[connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]
+[connection signal="text_changed" from="LineEdit" to="MenuButton" method="_on_test_text_changed"]

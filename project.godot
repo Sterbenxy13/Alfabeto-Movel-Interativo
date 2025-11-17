@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="Alfabeto movel interativo"
+run/main_scene="uid://d0qjlbmqjvtjn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+general/text_to_speech=true
+
+[dotnet]
+
+project/assembly_name="Alfabeto movel interativo"
 
 [rendering]
 

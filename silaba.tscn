@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj3pexy2uxfm"]
+
+[ext_resource type="Script" uid="uid://d3521s0djq2kh" path="res://silaba.gd" id="1_5y6g1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_right = 131.0
+offset_bottom = 73.0
+script = ExtResource("1_5y6g1")
+
+[connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_pressed"]
