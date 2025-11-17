@@ -9,7 +9,7 @@ func _ready() -> void:
 	
 	for c in ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']:
 		x = 300
-		for v in ['a', 'é', 'i', 'ó', 'u']:
+		for v in ['a', 'é', 'i', 'ó', 'u', 'ão']:
 			silabas.append(silaba_button.new(c + v, "res://audios/" + c + v + ".mp3"))
 			silabas[currentIndex].set_position(Vector2(x, y))
 			x += 50
